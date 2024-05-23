@@ -262,5 +262,13 @@ vif(initial_model)
 final_model <- stepAIC(initial_model, direction = "both")
 summary(final_model)
 
+# Compare initial and refined models
+anova(initial_model, final_model)
+
+# Print adjusted R-squared values
+cat("Initial Model Adjusted R-squared:", summary(initial_model)$adj.r.squared, "\n")
+cat("Refined Model Adjusted R-squared:", summary(final_model)$adj.r.squared, "\n")
+
+
 
 
